@@ -1,0 +1,56 @@
+/* ============================================================
+   LAYOUT PRINCIPAL – PracticumIA
+   Sidebar fijo + contenido centrado y responsive
+   ============================================================ */
+
+.app-layout {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ==============================
+   CONTENIDO PRINCIPAL
+   ============================== */
+.main-content {
+  flex: 1;
+  margin-left: 260px;         /* espacio para sidebar */
+  padding: 30px;
+  overflow-y: auto;
+  background: #f7f7fb;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* Centrado perfecto de todas las páginas */
+.dashboard-main,
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ==============================
+   MODO OSCURO
+   ============================== */
+.dark-mode .main-content {
+  background: #181820;
+  color: #ffffff;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+@media (max-width: 900px) {
+  .main-content {
+    margin-left: 0;    /* el sidebar se ocultará o colapsará */
+    padding: 20px;
+  }
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}

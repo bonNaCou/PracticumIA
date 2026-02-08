@@ -1,0 +1,171 @@
+/* ===========================================
+   📌 ESTILOS GENERALES DE LA PÁGINA EMPRESAS
+=========================================== */
+.empresas-page {
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================================
+   📌 FORMULARIO CRUD DE EMPRESAS
+=========================================== */
+.empresas-form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.empresas-form input {
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background: rgba(255,255,255,0.6);
+}
+
+.empresas-form button {
+  padding: 0.7rem 1rem;
+  background: #1d4ed8;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.empresas-form button:hover {
+  background: #153ea8;
+}
+
+.cancel-btn {
+  background: #64748b !important;
+}
+
+/* ===========================================
+   📌 TABLA DE EMPRESAS
+=========================================== */
+.empresas-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.1);
+}
+
+.empresas-table th,
+.empresas-table td {
+  padding: 0.9rem;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 15px;
+}
+
+.empresas-table button {
+  margin-right: 8px;
+  padding: 0.45rem 0.7rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.empresas-table .delete {
+  background: #dc2626;
+  color: white;
+}
+
+/* ===========================================
+   ⭐ SELECTOR PREMIUM — AIChat + Prácticas
+   (Glass UI con logos)
+=========================================== */
+.empresa-box {
+  margin-top: 15px;
+  padding: 18px;
+  background: rgba(255,255,255,0.55);
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  backdrop-filter: blur(16px);
+  animation: fadeIn 0.3s ease;
+}
+
+.empresa-label {
+  font-weight: 700;
+  font-size: 14px;
+  color: #333;
+}
+
+.empresa-select-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.empresa-select {
+  flex: 1;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  background: rgba(255,255,255,0.7);
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.empresa-select:hover {
+  border-color: #6a4afb;
+}
+
+.empresa-select:focus {
+  outline: none;
+  border-color: #6a4afb;
+  box-shadow: 0 0 8px rgba(106,74,251,0.3);
+}
+
+/* LOGO PEQUEÑO MOSTRADO AL LADO */
+.empresa-logo-preview {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+/* BOTÓN AÑADIR NUEVA */
+.add-empresa-btn {
+  margin-top: 12px;
+  background: #6a4afb;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.add-empresa-btn:hover {
+  background: #5830ff;
+  transform: translateY(-2px);
+}
+
+/* INPUT NUEVA EMPRESA */
+.empresa-input-new {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background: rgba(255,255,255,0.7);
+  transition: 0.2s;
+}
+
+.empresa-input-new:focus {
+  border-color: #6a4afb;
+  box-shadow: 0 0 8px rgba(106,74,251,0.3);
+}

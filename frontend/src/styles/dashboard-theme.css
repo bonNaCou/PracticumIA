@@ -1,0 +1,17 @@
+:root {
+  --background: #f5f6fa;
+  --text: #111;
+  --card: white;
+  --sidebar: #5b38d1;
+  --primary: #5b38d1;
+  --shadow: 0 3px 10px rgba(0,0,0,0.1);
+  --shadow-hover: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+body.dark {
+  --background: #1f1f26;
+  --text: #f1f1f1;
+  --card: #2b2b33;
+  --sidebar: #3d2b99;
+  --primary: #8d7cff;
+}

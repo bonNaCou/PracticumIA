@@ -1,0 +1,32 @@
+/* ================================
+   🌌 Fondo VisionOS Glow Orbs Premium
+=================================== */
+
+body {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 180, 255, 0.45) 0%, transparent 55%),
+    radial-gradient(circle at 85% 25%, rgba(170, 210, 255, 0.45) 0%, transparent 55%),
+    radial-gradient(circle at 45% 85%, rgba(200, 150, 255, 0.40) 0%, transparent 60%),
+    radial-gradient(circle at 70% 70%, rgba(255, 200, 230, 0.35) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(210, 170, 255, 0.30) 0%, transparent 65%),
+    #f7f4ff;
+
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* 🌬️ Animación sutil de respiración de luz */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.25), transparent 70%);
+  pointer-events: none;
+  animation: breathingGlow 12s ease-in-out infinite;
+}
+
+@keyframes breathingGlow {
+  0% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 0.38; transform: scale(1.05); }
+  100% { opacity: 0.25; transform: scale(1); }
+}

@@ -1,0 +1,112 @@
+.practicas-page {
+  padding: 2rem;
+}
+
+.subtitle {
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+/* FORMULARIO */
+.form-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.form-card form {
+  display: grid;
+  gap: 1rem;
+}
+
+form input,
+form select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* BOTONES */
+.btn-primary {
+  background: #4c3aff;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: #ccc;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+/* TABLA */
+.table-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #eee;
+}
+
+.data-table tr:hover {
+  background: #f7f7ff;
+}
+
+/* ESTADOS */
+.estado.activa {
+  color: #0a7cff;
+  font-weight: bold;
+}
+
+.estado.finalizada {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.estado.cancelada {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* ACCIONES */
+.btn-edit {
+  background: #ffc107;
+  border: none;
+  padding: 4px 10px;
+  margin-right: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background: #dc3545;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}

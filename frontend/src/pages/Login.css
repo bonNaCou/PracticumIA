@@ -1,0 +1,136 @@
+/* =============================== */
+/* CONTENEDOR GENERAL DEL LOGIN   */
+/* =============================== */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #5b38d1, #8e57ff);
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+/* =============================== */
+/* TARJETA DEL LOGIN              */
+/* =============================== */
+.login-card {
+  background: #fff;
+  width: 100%;
+  max-width: 380px;
+  padding: 2.5rem;
+  border-radius: 14px;
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.login-card h2 {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #5b38d1;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+/* =============================== */
+/* FORMULARIO                     */
+/* =============================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+label {
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: 0.2s ease-in-out;
+}
+
+input:focus {
+  outline: none;
+  border-color: #5b38d1;
+  box-shadow: 0 0 0 2px rgba(91, 56, 209, 0.2);
+}
+
+/* =============================== */
+/* BOTÓN                          */
+/* =============================== */
+button {
+  margin-top: 10px;
+  padding: 12px;
+  background: #5b38d1;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+button:hover {
+  background: #4a2eb3;
+}
+
+button:disabled {
+  background: #b9a6ff;
+  cursor: not-allowed;
+}
+
+/* =============================== */
+/* CAJA DE ERROR                  */
+/* =============================== */
+.error-box {
+  background: #ffe0e0;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-left: 4px solid #d63031;
+  color: #b71c1c;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+/* =============================== */
+/* RESPONSIVE (MÓVILES)           */
+/* =============================== */
+@media (max-width: 500px) {
+  .login-card {
+    padding: 2rem;
+  }
+
+  button {
+    font-size: 15px;
+  }
+}
+/* =============================== */
+/* LOGOTIPO                       */
+/* =============================== */
+.login-logo {
+  width: 120px;
+  height: auto;
+  margin: 0 auto 12px auto;
+  display: block;
+}

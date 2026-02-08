@@ -1,0 +1,1 @@
+echo "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==REDACTED" > replacements.txt

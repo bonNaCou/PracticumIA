@@ -1,0 +1,35 @@
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.students-table th {
+  background: var(--primary);
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.students-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.action-btn {
+  margin-right: 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #007bff;
+  color: white;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+}

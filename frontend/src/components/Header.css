@@ -1,0 +1,120 @@
+/* HEADER CONTENEDOR */
+.header {
+  
+  width: 100%;
+  padding: 18px 26px;
+  background: #ffffff;
+  border-radius: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 18px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(6px);
+  flex-wrap: wrap;
+}
+
+/* TÍTULO */
+.header-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e1e2f;
+}
+
+/* ACCIONES */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+}
+
+/* DESKTOP ICONS */
+.header-desktop-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* THEME */
+.theme-toggle {
+  background: #f2f2f7;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.theme-icon {
+  font-size: 18px;
+}
+
+/* AVATAR */
+.avatar {
+  background: #6a4efb;
+  color: white;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* MOBILE MENU BUTTON */
+.mobile-menu-btn {
+  display: none;
+  background: #f2f2f7;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* MINI MENU */
+.mobile-mini-menu {
+  position: absolute;
+  top: 52px;
+  right: 0;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1000;
+}
+
+.mini-menu-item {
+  background: #f6f6ff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header-title {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .header-desktop-actions {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+}

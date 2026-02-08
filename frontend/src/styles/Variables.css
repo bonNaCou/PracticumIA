@@ -1,0 +1,16 @@
+:root {
+  --primary: #5e3caf;
+  --primary-light: #8f6de1;
+  --sidebar-bg: #f5f2ff;
+  --sidebar-text: #3d2772;
+
+  --background: #ffffff;
+  --background-alt: #f8f7fb;
+
+  --text: #1e1e1e;
+  --text-light: #6a6a6a;
+
+  --card: #ffffff;
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --shadow-hover: 0 4px 20px rgba(0,0,0,0.12);
+}

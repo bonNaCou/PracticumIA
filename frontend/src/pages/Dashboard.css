@@ -1,0 +1,147 @@
+/* ===============================
+   DASHBOARD LAYOUT GENERAL
+   =============================== */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: var(--background, #f7f7fb);
+  color: var(--text, #1e1e2f);
+  transition: background 0.3s ease, color 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
+/* ===============================
+   MAIN CONTENT
+   =============================== */
+.dashboard-main {
+  flex: 1;
+  padding: 2.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ===============================
+   HEADER SECTION
+   =============================== */
+.dashboard-header h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--text, #1e1e2f);
+  margin-bottom: 0.2rem;
+}
+
+.dashboard-header .role {
+  color: #8a8a9e;
+  font-size: 0.95rem;
+  margin-bottom: 1.8rem;
+}
+
+/* ===============================
+   CARDS GRID
+   =============================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+/* ===============================
+   CARD STYLING
+   =============================== */
+.card-container {
+  background: white;
+  border-radius: 20px;
+  padding: 1.6rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.12);
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text, #1e1e2f);
+  margin-bottom: 0.6rem;
+}
+
+.card-subtitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #6c4ae4;
+}
+
+/* ===============================
+   LOGOUT BUTTON
+   =============================== */
+.logout-button {
+  margin-top: 2rem;
+  padding: 0.8rem 1.2rem;
+  background: #ff5b5b;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logout-button:hover {
+  background: #e04848;
+}
+
+/* ===============================
+   DARK MODE
+   =============================== */
+.dark-mode {
+  --background: #15151e;
+  --text: #ffffff;
+}
+
+.dark-mode .card-container {
+  background: #1e1e2f;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .card-subtitle {
+  color: #a992ff;
+}
+
+.dark-mode .card-container:hover {
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.08);
+}
+
+/* ===============================
+   FICHA SEMANAL CARD
+   =============================== */
+.dashboard-card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.dashboard-btn {
+  display: inline-block;
+  background: #6a4bff;
+  padding: 10px 16px;
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.dashboard-btn:hover {
+  background: #5a3be0;
+}

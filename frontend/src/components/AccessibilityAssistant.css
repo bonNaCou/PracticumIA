@@ -1,0 +1,83 @@
+.access-floating-btn {
+  position: fixed;
+  bottom: 22px;
+  left: 22px;
+  background: #ff4fb0;
+  color: white;
+  border: none;
+  padding: 14px 16px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  z-index: 9999;
+}
+
+.access-panel {
+  position: fixed;
+  bottom: 90px;
+  left: 22px;
+  width: 310px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.28);
+  overflow: hidden;
+  z-index: 9999;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.access-header {
+  background: #ff4fb0;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.access-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+}
+
+.access-options button {
+  background: #f6e8ff;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.high-contrast {
+  filter: invert(100%) hue-rotate(180deg);
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url("https://fonts.cdnfonts.com/s/16509/OpenDyslexic-Regular.woff") format("woff");
+}
+
+.dyslexia-font * {
+  font-family: 'OpenDyslexic' !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.read-btn {
+  background: #e6ddff;
+  font-weight: 600;
+}
+
+.stop-btn {
+  background: #ffe3e3;
+  color: #b00020;
+  font-weight: 700;
+}

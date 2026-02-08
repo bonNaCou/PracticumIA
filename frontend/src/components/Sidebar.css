@@ -1,0 +1,149 @@
+/* ===== MENU LATERAL FIJO (PROFESIONAL) ===== */
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  background: #ffffff;
+  border-right: 1px solid #eee;
+
+  padding: 30px 20px 20px;  /* añade espacio arriba y corrige separación */
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 4px 0px 18px rgba(0, 0, 0, 0.05);
+
+  transition: transform 0.35s ease;
+  transform: translateX(-260px); /* Oculto por defecto */
+}
+
+/* Sidebar visible */
+.sidebar-open .sidebar {
+  transform: translateX(0);
+}
+
+/* ===== LOGO ===== */
+.sidebar-logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: #5a1eff;
+
+  margin-top: 10px;      /* baja el logo del borde superior */
+  margin-bottom: 30px;   /* separa del menú */
+  text-align: center;
+}
+
+/* ===== LINKS ===== */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* corregido (antes tenías "10x") */
+}
+
+.link {
+  text-decoration: none;
+  color: #555;
+  font-size: 16px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: 0.2s ease;
+  font-weight: 500;
+}
+
+.link:hover {
+  background: #f0ebff;
+  color: #5a1eff;
+}
+
+/* Activo */
+.link.active {
+  background: #5a1eff;
+  color: white;
+  box-shadow: 0px 4px 12px rgba(90, 30, 255, 0.3);
+}
+
+/* Iconos */
+.icon {
+  font-size: 18px;
+  transition: 0.2s ease;
+}
+
+.link.active .icon {
+  transform: scale(1.1);
+}
+
+/* ===== BOTÓN CERRAR SESIÓN ===== */
+.logout-btn {
+  width: 100%;
+  background: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 40px;
+  margin-bottom: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  transition: 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #e63939;
+}
+
+/* ===== MENÚ HAMBURGUESA ===== */
+.menu-toggle {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 2000;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 10px;
+  background: #5a1eff;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.menu-toggle:hover {
+  background: #4717d1;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .sidebar {
+    transform: translateX(-260px);
+    position: fixed;
+    z-index: 2000;
+  }
+
+  .sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+    padding: 15px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}

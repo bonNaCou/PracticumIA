@@ -1,0 +1,37 @@
+require("dotenv").config();
+const bcrypt = require("bcrypt");
+const db = require("./db");
+
+async function resetAdmin() {
+  try {
+    console.log("🔧 Reiniciando usuario admin...");
+
+    const email = "admin@practicumia.com";   // nuevo email del admin
+    const password = "Practicum2025";        // nueva contraseña elegida
+
+    // 1. Borrar usuario anterior si existe
+    await db.query("DELETE FROM usuarios WHERE email = ?", [email]);
+
+    // 2. Generar hash nuevo
+    const password_hash = await bcrypt.hash(password, 10);
+
+    // 3. Insertar usuario nuevo
+    await db.query(
+      `INSERT INTO usuarios (nombre, email, password_hash, rol)
+       VALUES (?, ?, ?, ?)`,
+      ["Administrador", email, password_hash, "admin"]
+    );
+
+    console.log("✅ Usuario admin creado correctamente:");
+    console.log("Email:", email);
+    console.log("Password:", password);
+    console.log("Hash usado:", password_hash);
+
+    process.exit();
+  } catch (error) {
+    console.error("❌ Error reseteando admin:", error);
+    process.exit(1);
+  }
+}
+
+resetAdmin();

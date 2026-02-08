@@ -1,0 +1,86 @@
+/* ============================================================
+   THEME TOGGLE
+   ------------------------------------------------------------
+   Botón de cambio de tema (claro / oscuro)
+   Diseño accesible, profesional y desacoplado del header
+============================================================ */
+
+/* Contenedor */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  padding: 8px;
+
+  cursor: pointer;
+  border-radius: 20px;
+  background: #eee;
+
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+
+  /* Espaciado correcto respecto al avatar / rol */
+  margin-right: 12px;
+}
+
+/* Modo oscuro */
+.theme-toggle.dark {
+  background: #333;
+}
+
+/* Icono (moon / sun) */
+.theme-toggle svg {
+  font-size: 20px;
+  color: #444;
+
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Icono en modo oscuro */
+.theme-toggle.dark svg {
+  color: #fff;
+}
+
+/* Hover */
+.theme-toggle:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle:hover svg {
+  transform: scale(1.15);
+}
+
+/* Accesibilidad: foco teclado */
+.theme-toggle:focus-visible {
+  outline: 2px solid #6a4bff;
+  outline-offset: 3px;
+}
+
+/* Responsive (pantallas pequeñas) */
+@media (max-width: 768px) {
+  .theme-toggle {
+    margin-right: 8px;
+    width: 44px;
+  }
+
+  .theme-toggle svg {
+    font-size: 18px;
+  }
+
+  /* ============================================================
+   HEADER ACTIONS (Theme + Accessibility)
+   - Garantiza separación visible entre los 2 botones
+============================================================ */
+.header-actions{
+  display: flex;
+  align-items: center;
+  gap: 12px;              /* espacio entre 🌙 y A */
+}
+
+/* Opcional: si están demasiado pegados al borde derecho */
+.header-actions{
+  margin-right: 10px;
+}
+
+}
