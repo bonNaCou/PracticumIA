@@ -6,7 +6,7 @@
  * ---------------------------------------------------------
  */
 
-import api from "./api"; // ESTA es tu instancia correcta — NO vuelvas a crear otra
+import api from "./api"; // Importa la instancia de Axios configurada con el token
 
 // Listar estudiantes
 export async function getEstudiantes() {

@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS documentos (
 CREATE INDEX idx_docs_practica ON documentos(practica_id);
 
 -- ===========================================================
--- 7) Registro de interacciones IA (opcional)
+-- 7) Registro de interacciones IA para seguimiento y mejora continua
 -- ===========================================================
 CREATE TABLE IF NOT EXISTS ia_logs (
     id INT AUTO_INCREMENT PRIMARY KEY,

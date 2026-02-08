@@ -1,5 +1,5 @@
 /* ================================
-   🌌 Fondo VisionOS Glow Orbs Premium
+   Fondo VisionOS Glow Orbs Premium
 =================================== */
 
 body {
@@ -15,7 +15,7 @@ body {
   overflow-x: hidden;
 }
 
-/* 🌬️ Animación sutil de respiración de luz */
+/* Animación sutil de respiración de luz */
 body::before {
   content: "";
   position: fixed;

@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-
+const path = require("path");
 const app = express();
 
 // Middlewares
@@ -20,7 +20,7 @@ const documentosRoutes = require("./routes/documentos");
 const iaLogsRoutes = require("./routes/ia_logs");
 const aiRoutes = require("./routes/ai");
 
-// ⭐ Swagger CORRECTO ⭐
+// Swagger UI
 const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./swagger");
 
@@ -30,10 +30,10 @@ app.use("/empresas", empresasRoutes);
 app.use("/estudiantes", estudiantesRoutes);
 app.use("/practicas", practicasRoutes);
 app.use("/evaluaciones", evaluacionesRoutes);
-app.use("/api/auth", authRoutes); // Ruta correcta login
+app.use("/api/auth", authRoutes); // Ruta  login
 app.use("/documentos", documentosRoutes);
 app.use("/ia_logs", iaLogsRoutes);
-app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/ai", aiRoutes);
 
 // Ruta principal
@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
   res.send("PracticumIA Backend funcionando correctamente");
 });
 
-// ⭐ Swagger Docs ⭐
+// Swagger Docs 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Iniciar servidor

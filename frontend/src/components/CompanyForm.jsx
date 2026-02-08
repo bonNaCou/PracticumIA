@@ -22,7 +22,7 @@ export default function CompanyForm({ onSubmit, onCancel, initialData }) {
   }, [initialData]);
 
   // =======================================
-  // 🔥 AUTORRELLENAR DATOS COMPLETOS
+  // AUTORRELLENAR DATOS COMPLETOS
   // =======================================
   const handleSelectEmpresa = (nombreEmpresa) => {
     const empresa = empresasDAW.find((e) => e.nombre === nombreEmpresa);

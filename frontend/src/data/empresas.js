@@ -1,5 +1,5 @@
 // ===============================================
-// 📌 LISTA DE EMPRESAS (con sector + logos)
+// LISTA DE EMPRESAS (con sector + logos)
 // ===============================================
 
 export const empresasDAW = [

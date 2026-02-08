@@ -1,4 +1,4 @@
-/* ===== MENU LATERAL FIJO (PROFESIONAL) ===== */
+/* ===== MENU LATERAL FIJO ===== */
 .sidebar {
   width: 260px;
   min-width: 260px;
@@ -10,7 +10,7 @@
   background: #ffffff;
   border-right: 1px solid #eee;
 
-  padding: 30px 20px 20px;  /* añade espacio arriba y corrige separación */
+  padding: 30px 20px 20px;  
   display: flex;
   flex-direction: column;
 
@@ -19,7 +19,7 @@
   box-shadow: 4px 0px 18px rgba(0, 0, 0, 0.05);
 
   transition: transform 0.35s ease;
-  transform: translateX(-260px); /* Oculto por defecto */
+  transform: translateX(-260px); 
 }
 
 /* Sidebar visible */
@@ -34,7 +34,7 @@
   color: #5a1eff;
 
   margin-top: 10px;      /* baja el logo del borde superior */
-  margin-bottom: 30px;   /* separa del menú */
+  margin-bottom: 30px;   /* separador del menú */
   text-align: center;
 }
 
@@ -42,7 +42,7 @@
 .menu {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* corregido (antes tenías "10x") */
+  gap: 10px; 
 }
 
 .link {

@@ -2,105 +2,74 @@ const express = require("express");
 const router = express.Router();
 const db = require("../db");
 const auth = require("../middleware/authMiddleware");
-const role = require("../middleware/roleMiddleware");
-const upload = require("../middleware/upload");
+const upload = require("../middleware/upload.js");
 const fs = require("fs");
 const path = require("path");
 
-// =====================================================
-// Obtener todos los documentos (admin/tutor/estudiante)
-// =====================================================
+/*
+=================================================
+OBTENER DOCUMENTOS
+=================================================
+*/
 router.get("/", auth, async (req, res) => {
   try {
-    let query = `
-      SELECT d.*, p.estudiante_id, p.empresa_id
-      FROM documentos d
-      INNER JOIN practicas p ON d.practica_id = p.id
-    `;
+    const [rows] = await db.query(`
+      SELECT id, nombre_archivo, tipo, url, fecha_subida
+      FROM documentos
+      ORDER BY fecha_subida DESC
+    `);
 
-    if (req.user.rol === "estudiante") {
-      query += `
-        INNER JOIN estudiantes s ON p.estudiante_id = s.id
-        WHERE s.usuario_id = ${req.user.id}
-      `;
-    }
-
-    const [rows] = await db.query(query);
     res.json(rows);
   } catch (error) {
-    console.error("Error al obtener documentos:", error);
-    res.status(500).json({ error: "Error al obtener documentos" });
+    console.error("Error obteniendo documentos:", error);
+    res.status(500).json({ error: "Error obteniendo documentos" });
   }
 });
 
-// =====================================================
-// SUBIR ARCHIVO REAL
-// =====================================================
-router.post(
-  "/upload",
-  auth,
-  upload.single("archivo"),
-  async (req, res) => {
-    try {
-      const { practica_id } = req.body;
+/*
+=================================================
+SUBIR DOCUMENTO
+=================================================
+*/
+router.post("/upload", auth, (req, res) => {
+  upload.single("archivo")(req, res, function (err) {
+    if (err) {
+      console.error("Error de Multer:", err.message);
+      return res.status(400).json({ error: err.message });
+    }
 
-      if (!practica_id) {
-        return res.status(400).json({ error: "practica_id es obligatorio" });
-      }
+    if (!req.file) {
+      return res.status(400).json({ error: "No se recibió ningún archivo" });
+    }
 
-      if (!req.file) {
-        return res.status(400).json({ error: "Archivo no recibido" });
-      }
+    const fileUrl = `/uploads/${req.file.filename}`;
 
-      const fileUrl = `/uploads/${req.file.filename}`;
-
-      const [result] = await db.query(
-        `
-        INSERT INTO documentos (practica_id, nombre_archivo, tipo, url)
-        VALUES (?, ?, ?, ?)
-      `,
-        [practica_id, req.file.filename, req.file.mimetype, fileUrl]
-      );
-
-      res.status(201).json({
-        message: "Documento subido correctamente",
-        documento_id: result.insertId,
-        url: fileUrl
+    db.query(
+      "INSERT INTO documentos (nombre_archivo, tipo, url) VALUES (?, ?, ?)",
+      [req.file.filename, req.file.mimetype, fileUrl]
+    )
+      .then(([result]) => {
+        res.status(201).json({
+          id: result.insertId,
+          nombre_archivo: req.file.filename,
+          tipo: req.file.mimetype,
+          url: fileUrl
+        });
+      })
+      .catch((dbError) => {
+        console.error("Error en DB:", dbError);
+        res.status(500).json({ error: "Error guardando en base de datos" });
       });
-    } catch (error) {
-      console.error("Error al subir documento:", error);
-      res.status(500).json({ error: "Error al subir documento" });
-    }
-  }
-);
-
-// =====================================================
-// Descargar archivo
-// =====================================================
-router.get("/download/:id", auth, async (req, res) => {
-  try {
-    const [rows] = await db.query(
-      "SELECT url FROM documentos WHERE id = ?",
-      [req.params.id]
-    );
-
-    if (!rows.length) {
-      return res.status(404).json({ error: "Documento no encontrado" });
-    }
-
-    const filePath = path.join(__dirname, "..", rows[0].url);
-
-    res.download(filePath);
-  } catch (error) {
-    console.error("Error al descargar documento:", error);
-    res.status(500).json({ error: "Error al descargar documento" });
-  }
+  });
 });
 
-// =====================================================
-// Eliminar documento (admin)
-// =====================================================
-router.delete("/:id", auth, role("admin"), async (req, res) => {
+
+/*
+=================================================
+ELIMINAR DOCUMENTO
+=================================================
+*/
+router.delete("/:id", auth, async (req, res) => {
   try {
     const [rows] = await db.query(
       "SELECT url FROM documentos WHERE id = ?",
@@ -113,20 +82,19 @@ router.delete("/:id", auth, role("admin"), async (req, res) => {
 
     const filePath = path.join(__dirname, "..", rows[0].url);
 
-    // Borrar archivo físico
     if (fs.existsSync(filePath)) {
       fs.unlinkSync(filePath);
     }
 
-    // Borrar registro BD
-    await db.query("DELETE FROM documentos WHERE id = ?", [
-      req.params.id
-    ]);
+    await db.query(
+      "DELETE FROM documentos WHERE id = ?",
+      [req.params.id]
+    );
 
     res.json({ message: "Documento eliminado correctamente" });
   } catch (error) {
-    console.error("Error al eliminar documento:", error);
-    res.status(500).json({ error: "Error al eliminar documento" });
+    console.error("Error eliminando documento:", error);
+    res.status(500).json({ error: "Error eliminando documento" });
   }
 });
 

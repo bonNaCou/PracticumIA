@@ -1,9 +1,9 @@
 const voiceMap = {
   // FEMENINAS PRINCIPALES (cada una único timbre)
-  synthia: "shimmer",         // Profesional • Clara • Precisa
-  shayla: "nova",             // Joven • Brillante • Energética
-  adira: "verse",             // Elegante • Profunda • Pausada
-  sherrynova: "alloy",        // Cálida • Cercana • Sensible
+  synthia: "shimmer",         // Profesional • Clara • Precisa// Neutra
+  shayla: "nova",             // Joven • Brillante • Energética//
+  adira: "verse",             // Elegante • Profunda • Pausada// Narrativa
+  sherrynova: "alloy",        // Cálida • Cercana • Sensible// Versátil
 
   // ESPAÑOL CASTELLANO (femeninas)
   esp_femenina1: "shimmer",   // Inés — Castellano claro • Neutro

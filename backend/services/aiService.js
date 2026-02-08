@@ -39,7 +39,7 @@ function detectarVozAutomatica(prompt) {
 }
 
 // ======================================================
-// 🧠 CHAT IA — PERSONALIDAD REAL + CONTROL DEL PRIMER MENSAJE
+// CHAT IA — PERSONALIDAD REAL + CONTROL DEL PRIMER MENSAJE
 // ======================================================
 
 async function chatIA(prompt, voice = "synthia", isFirstMessage = false, personalityText = "") {
@@ -171,7 +171,7 @@ async function generarAudio(text, voice = "synthia") {
 }
 
 // ======================================================
-// 📝 INFORME ACADÉMICO
+// INFORME ACADÉMICO
 // ======================================================
 async function generarInforme(prompt) {
   const res = await openai.chat.completions.create({
@@ -186,7 +186,7 @@ async function generarInforme(prompt) {
 }
 
 // ======================================================
-// 📄 ANALIZAR PDF (GEMINI)
+// ANALIZAR PDF (GEMINI)
 // ======================================================
 async function analizarPDF(file) {
   const url =

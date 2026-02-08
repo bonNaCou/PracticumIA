@@ -10,7 +10,7 @@ export default function SignaturePad({ onChange }) {
 
     ctx.lineWidth = 2;
     ctx.lineCap = "round";
-    ctx.strokeStyle = "#4f46e5"; // violeta elegante
+    ctx.strokeStyle = "#4f46e5"; 
   }, []);
 
   const startDraw = (e) => {
@@ -18,10 +18,12 @@ export default function SignaturePad({ onChange }) {
     draw(e);
   };
 
+  // guardador de firmas
+
   const endDraw = () => {
     drawing.current = false;
     const canvas = canvasRef.current;
-    onChange?.(canvas.toDataURL()); // guardas la firma
+    onChange?.(canvas.toDataURL()); 
   };
 
   const draw = (e) => {

@@ -1,5 +1,5 @@
 /* ============================================
-   🌫️ CHAT CONTAINER — Vision Pro Animation
+   CHAT CONTAINER — Vision Pro Animation
 ============================================ */
 .chat-container {
   position: fixed;
@@ -15,7 +15,7 @@
 }
 
 /* ============================================
-   🤖 BOTÓN FLOTANTE — VisionOS Orb Button
+   BOTÓN FLOTANTE — VisionOS Orb Button
 ============================================ */
 .chat-toggle {
   width: 78px;
@@ -39,7 +39,7 @@
 }
 
 /* ============================================
-   🪟 CHAT BOX — Premium Vision Pro Glass
+   CHAT BOX — Premium Vision Pro Glass
 ============================================ */
 .chat-box {
   width: 380px;
@@ -69,7 +69,7 @@
 }
 
 /* ============================================
-   🟣 HEADER
+   HEADER
 ============================================ */
 .header {
   display: flex;
@@ -98,7 +98,7 @@
 }
 
 /* ============================================
-   🎚️ SELECTOR DE VOCES
+   SELECTOR DE VOCES
 ============================================ */
 .voice-slider {
   display: flex;
@@ -132,7 +132,7 @@
 }
 
 /* ============================================
-   🏢 SELECTOR DE EMPRESAS (NUEVO)
+   SELECTOR DE EMPRESAS 
 ============================================ */
 .empresa-box {
   background: rgba(255,255,255,0.4);
@@ -179,7 +179,7 @@
 }
 
 /* ============================================
-   🎤 ANIMACIÓN DE VOZ
+   ANIMACIÓN DE VOZ
 ============================================ */
 .voice-animation {
   display: flex;
@@ -202,7 +202,7 @@
 }
 
 /* ============================================
-   💬 BURBUJAS DE MENSAJES
+   BURBUJAS DE MENSAJES
 ============================================ */
 .messages {
   flex: 1;
@@ -232,7 +232,7 @@
 }
 
 /* ============================================
-   🔊 REPLAY BUTTON
+   REPLAY BUTTON
 ============================================ */
 .replay-btn {
   margin-top: 6px;
@@ -250,7 +250,7 @@
 }
 
 /* ============================================
-   ✏️ INPUT
+   INPUT
 ============================================ */
 .input-area {
   display: flex;
@@ -273,7 +273,7 @@
   cursor: pointer;
 }
 /* ===========================================
-   🌙 DARK MODE para el chat
+   DARK MODE para el chat
 =========================================== */
 @media (prefers-color-scheme: dark) {
   .chat-box {
@@ -301,7 +301,7 @@
 }
 
 /* ===========================================
-   ✨ ANIMACIÓN PREMIUM — FLOTAR
+   ANIMACIÓN PREMIUM — FLOTAR
 =========================================== */
 .voice-card {
   animation: float 4s ease-in-out infinite;
@@ -314,7 +314,7 @@
 }
 
 /* ===========================================
-   🏢 ICONOS DE EMPRESAS
+   ICONOS DE EMPRESAS
 =========================================== */
 .empresa-select option {
   padding-left: 28px;

@@ -1,5 +1,5 @@
 // ===============================================
-// ⭐ SELECTOR PREMIUM CON LOGOS
+// SELECTOR PREMIUM CON LOGOS
 // ===============================================
 
 import { useState } from "react";

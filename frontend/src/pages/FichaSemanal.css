@@ -103,7 +103,7 @@
 }
 
 .firma-meta{
-  min-height:26px;   /* reserva espacio aunque no haya texto */
+  min-height:26px;   
   display:flex;
   align-items:center;
   gap:8px;
@@ -112,9 +112,9 @@
   opacity:.9;
 }
 
-/* Canvas SIEMPRE ocupa el mismo espacio */
+/* Espacio Canvas */
 .canvas-wrap{
-  margin-top:auto; /* empuja el canvas al fondo y alinea */
+  margin-top:auto; 
 }
 
 .canvas-firma{
@@ -253,7 +253,7 @@
 }
 
 /* ================================
-   RESPONSIVE
+   RESPONSIvILIDAD DE APROBACIÓN
 ================================ */
 @media (max-width: 900px){
   .firmas-section{ grid-template-columns:repeat(2, minmax(0,1fr)); }

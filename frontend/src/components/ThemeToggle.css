@@ -75,7 +75,7 @@
 .header-actions{
   display: flex;
   align-items: center;
-  gap: 12px;              /* espacio entre 🌙 y A */
+  gap: 12px;            
 }
 
 /* Opcional: si están demasiado pegados al borde derecho */

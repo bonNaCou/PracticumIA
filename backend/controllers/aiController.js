@@ -13,14 +13,14 @@ exports.chat = async (req, res) => {
     const { prompt, voice, empresa } = req.body;
     const userId = req.user.id;
 
-    // 1️⃣ Detectar si es el primer mensaje del usuario
+    // 1 Detectar si es el primer mensaje del usuario
     const [rows] = await db.query(
       "SELECT id FROM ia_conversaciones WHERE usuario_id = ? LIMIT 1",
       [userId]
     );
     const isFirstMessage = rows.length === 0;
 
-    // 2️⃣ Adaptar el prompt si el usuario seleccionó empresa
+    // 2️ Adaptar el prompt si el usuario seleccionó empresa
     let promptFinal = prompt;
 
     if (empresa) {
@@ -33,10 +33,10 @@ exports.chat = async (req, res) => {
       `;
     }
 
-    // 3️⃣ Generar respuesta IA
+    // 3️ Generar respuesta IA
     const respuesta = await chatIA(promptFinal, voice, isFirstMessage);
 
-    // 4️⃣ Guardar en BD
+    // 4️ Guardar en BD
     await db.query(
       `INSERT INTO ia_conversaciones (usuario_id, mensaje, respuesta, voz_usada, empresa)
        VALUES (?, ?, ?, ?, ?)`,
@@ -53,7 +53,7 @@ exports.chat = async (req, res) => {
 
 
 // ======================================================
-// 🔊 TEXTO → VOZ (TTS)
+// TEXTO → VOZ (TTS)
 // ======================================================
 exports.tts = async (req, res) => {
   try {
@@ -101,7 +101,7 @@ exports.pdfAnalyze = async (req, res) => {
 
 
 // ======================================================
-// 📝 GENERAR INFORME ACADÉMICO
+// GENERAR INFORME ACADÉMICO
 // ======================================================
 exports.generarInforme = async (req, res) => {
   try {

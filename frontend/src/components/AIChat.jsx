@@ -14,17 +14,17 @@ const VOICES = [
   { id: "gamerkween", label: "GamerKween", style: "Streamer • Dinámica", color: "#14f195" },
   { id: "lavinagreta", label: "LaVinagreta", style: "Picante • Atrevida", color: "#f72585" },
 
-  // 🔥 NUEVAS VOCES — CASTELLANO ESPAÑOL
+  // NUEVAS VOCES — CASTELLANO ESPAÑOL
   { id: "esp_femenina1", label: "Inés (ES)", style: "Clara • Natural", color: "#ff8fab" },
   { id: "esp_femenina2", label: "Sonia (ES)", style: "Neutral • Elegante", color: "#ffb3c6" },
   { id: "esp_masculina1", label: "Carlos (ES)", style: "Masculina • Firme", color: "#a2d2ff" },
   { id: "esp_masculina2", label: "Iván (ES)", style: "Grave • Natural", color: "#90caf9" },
 
-  // 🔥 VOCES MASCULINAS INTERNACIONALES
+  // VOCES MASCULINAS INTERNACIONALES
   { id: "chikwadovoice", label: "ChikwadoVoice", style: "Profunda • Africana", color: "#6f4e37" },
   { id: "odogwubass", label: "OdogwuBass", style: "Grave • Dominante", color: "#4b3832" },
 
-  // 🔥 VOCES NARRADORES
+  // VOCES NARRADORES
   { id: "narrator", label: "Narrador", style: "Épico • Documental", color: "#ffaa00" },
   { id: "storyteller", label: "Cuentacuentos", style: "Mágico • Suave", color: "#ffc400" },
 ];
@@ -43,7 +43,7 @@ export default function AIChat() {
   const audioRef = useRef(null);
   const token = localStorage.getItem("token");
 
-  // 🧠 Cambio automático de voz según empresa (NO muestra nada en pantalla)
+  // Cambio automático de voz según empresa 
   useEffect(() => {
     if (!empresaSeleccionada) return;
 
@@ -90,7 +90,7 @@ export default function AIChat() {
     setSpeaking(false);
   };
 
-  // 🎤 MICRO
+  // MICRO
   let recognition;
   if ("webkitSpeechRecognition" in window) {
     recognition = new window.webkitSpeechRecognition();
@@ -120,7 +120,7 @@ export default function AIChat() {
     setListening(false);
   };
 
-  // 🚀 ENVIAR
+  // ENVIAR
   const send = async (forcedText) => {
     const finalText = forcedText || msg;
     if (!finalText.trim()) return;
@@ -159,7 +159,7 @@ export default function AIChat() {
     setMsg("");
   };
 
-  // 🔁 REPLAY
+  // REPLAY
   const replayVoice = async (text) => {
     try {
       const audioRes = await axios.post(

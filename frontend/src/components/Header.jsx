@@ -33,7 +33,7 @@ export default function Header({ usuario }) {
   return (
     <header className="header">
 
-      {/* 📌 grupo izquierdo */}
+      {/* grupo izquierdo */}
       <div className="left-group">
         <button className="menu-btn" onClick={toggleSidebar}>
           <FaBars />
@@ -49,10 +49,10 @@ export default function Header({ usuario }) {
         </div>
       </div>
 
-      {/* 📌 título */}
+      {/* título */}
       <h1 className="header-title">{title}</h1>
 
-      {/* 📌 grupo derecho */}
+      {/* grupo derecho */}
       <div className="right-group">
 
         {/* DESKTOP */}

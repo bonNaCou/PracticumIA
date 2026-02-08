@@ -1,5 +1,5 @@
 /* ===========================================
-   📌 ESTILOS GENERALES DE LA PÁGINA EMPRESAS
+   ESTILOS GENERALES DE LA PÁGINA EMPRESAS
 =========================================== */
 .empresas-page {
   padding: 2rem;
@@ -12,7 +12,7 @@
 }
 
 /* ===========================================
-   📌 FORMULARIO CRUD DE EMPRESAS
+   FORMULARIO CRUD DE EMPRESAS
 =========================================== */
 .empresas-form {
   display: grid;
@@ -47,7 +47,7 @@
 }
 
 /* ===========================================
-   📌 TABLA DE EMPRESAS
+   TABLA DE EMPRESAS
 =========================================== */
 .empresas-table {
   width: 100%;
@@ -79,8 +79,7 @@
 }
 
 /* ===========================================
-   ⭐ SELECTOR PREMIUM — AIChat + Prácticas
-   (Glass UI con logos)
+   SELECTOR PREMIUM — AIChat + Prácticas
 =========================================== */
 .empresa-box {
   margin-top: 15px;

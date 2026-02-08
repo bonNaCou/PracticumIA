@@ -19,7 +19,7 @@ export default function StudentForm({ onSubmit, onCancel, initialData }) {
   const [showPass, setShowPass] = useState(false);
 
   // ============================
-  // Autorrelleno si estamos editando
+  // Autorrelleno cuando se recibe initialData (para edición)
   // ============================
   useEffect(() => {
     if (initialData) {
